@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-IMAGE_PATH = "data/raw/joia_teste.webp"
+IMAGE_PATH = "data/raw/joia_teste.jpg"
 MASK_PATH = "data/masks/joia_teste_mask.png"
 OUTPUT_PATH = "data/processed/joia_teste_rgba.png"
 

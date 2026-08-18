@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 MODEL_PATH = "models/yolov8n-seg.pt"
-IMAGE_PATH = "data/raw/joia_teste.webp"
+IMAGE_PATH = "data/raw/joia_teste.jpg"
 MASK_PATH = "data/masks/joia_teste_mask.png"
 
 model = YOLO(MODEL_PATH)
