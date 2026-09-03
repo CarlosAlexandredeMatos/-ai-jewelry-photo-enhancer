@@ -3,3 +3,4 @@ venv
 .env
 alembic
 alembic.ini
+banco.db
