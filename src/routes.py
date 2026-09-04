@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models import Usuario, db
+from src.models import Usuario, db
 from sqlalchemy.orm import sessionmaker
 
 
@@ -22,3 +22,6 @@ async def cadastrar_usuario(nome: str, senha: str):
     else:
         novo_usuario = Usuario(nome, senha)
         session.add(novo_usuario)
+        session.commit()
+
+        return 'Usuário cadastrado com sucesso'
