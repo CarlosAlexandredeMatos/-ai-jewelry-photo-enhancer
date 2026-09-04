@@ -1,7 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from src.models import Usuario, db
-from sqlalchemy.orm import sessionmaker
-
+from dependencies import get_session
 
 auth_router = APIRouter(prefix = '/auth')
 
@@ -11,10 +10,8 @@ async def home():
 
 
 @auth_router.post('/cadastrar_usuario')
-async def cadastrar_usuario(nome: str, senha: str):
-    Session = sessionmaker(bind = db)
-    session = Session()
-
+async def cadastrar_usuario(nome: str, senha: str, session = Depends(get_session)):
+    session = get_session()
     usuario = session.query(Usuario).filter(Usuario.nome == nome).all()
     if usuario:
         return 'Erro, já existe um usuario com este nome.'
