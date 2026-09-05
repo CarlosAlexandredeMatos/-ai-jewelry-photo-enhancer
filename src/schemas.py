@@ -9,3 +9,11 @@ class UsuarioSchema(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class LoginSchema(BaseModel):
+    senha : str
+    nome : str
+
+    class Config:
+        from_attributes = True
